@@ -20,6 +20,7 @@
 		0499111228079B420050FABB /* LeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499111128079B420050FABB /* LeaderViewController.swift */; };
 		0499111428079B770050FABB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499111328079B770050FABB /* HomeViewController.swift */; };
 		0499111628079B980050FABB /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499111528079B980050FABB /* MapsViewController.swift */; };
+		04991118280CC6370050FABB /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04991117280CC6370050FABB /* APIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		0499111128079B420050FABB /* LeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderViewController.swift; sourceTree = "<group>"; };
 		0499111328079B770050FABB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0499111528079B980050FABB /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
+		04991117280CC6370050FABB /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				0499111128079B420050FABB /* LeaderViewController.swift */,
 				0499110F28079B1E0050FABB /* ResourcesViewController.swift */,
 				0499110D28079ACB0050FABB /* WeatherViewController.swift */,
+				04991117280CC6370050FABB /* APIService.swift */,
 				0499110B280798ED0050FABB /* SignUpViewController.swift */,
 				04991109280794F10050FABB /* LogInViewController.swift */,
 				049910FE280794650050FABB /* Assets.xcassets */,
@@ -163,6 +166,7 @@
 				0499111228079B420050FABB /* LeaderViewController.swift in Sources */,
 				0499110E28079ACB0050FABB /* WeatherViewController.swift in Sources */,
 				049910FA280794640050FABB /* ViewController.swift in Sources */,
+				04991118280CC6370050FABB /* APIService.swift in Sources */,
 				0499111028079B1E0050FABB /* ResourcesViewController.swift in Sources */,
 				0499111628079B980050FABB /* MapsViewController.swift in Sources */,
 				0499111428079B770050FABB /* HomeViewController.swift in Sources */,
