@@ -15,7 +15,10 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func signUpPressed(_ sender: Any) {
+        performSegue(withIdentifier: "SignedUp", sender: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

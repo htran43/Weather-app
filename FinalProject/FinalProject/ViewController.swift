@@ -18,5 +18,8 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "LogIn", sender: nil)
     }
     
+    @IBAction func signUpPressed(_ sender: Any) {
+        performSegue(withIdentifier: "Create Account", sender: nil)
+    }
 }
 

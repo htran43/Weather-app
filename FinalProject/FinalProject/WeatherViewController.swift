@@ -10,14 +10,22 @@ import CoreLocation
 import MapKit
 
 class WeatherViewController: UIViewController, CLLocationManagerDelegate {
+    @IBOutlet var tempOutlet: UILabel!
+    @IBOutlet var minTempOutlet: UILabel!
+    @IBOutlet var maxTempOutlet: UILabel!
+    @IBOutlet var windSpeedOutlet: UILabel!
+    @IBOutlet var humidityOutlet: UILabel!
     //this stores info from the api call to be displayed on weather page
     struct Forecast: Decodable {
         struct Daily: Decodable {
             struct Temp: Decodable {
                 let day: Double
+                let min: Double
+                let max: Double
             }
             let temp: Temp
             let humidity: Int
+            let wind_speed: Double
         }
         let daily: [Daily]
     }
@@ -27,6 +35,10 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     var latitude: Double = 0
     var longitude: Double = 0
     var tempDay: Double = 0
+    var minTemp: Double = 0
+    var maxTemp: Double = 0
+    var windSpeed: Double = 0
+    var humidity: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +55,6 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
-        print(tempDay)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -68,10 +79,19 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
                 let jsonData = string.data(using: .utf8)!
                 let foreCast: Forecast = try! JSONDecoder().decode(Forecast.self, from: jsonData)
                 self.tempDay = foreCast.daily[0].temp.day
-                print(self.tempDay)
+                self.minTemp = foreCast.daily[0].temp.min
+                self.maxTemp = foreCast.daily[0].temp.max
+                self.windSpeed = foreCast.daily[0].wind_speed
+                self.humidity = foreCast.daily[0].humidity
             }
         }
         task.resume()
+        print(tempDay)
+        self.tempOutlet.text = String(format: "%.0f°", self.tempDay)
+        self.minTempOutlet.text = String(format: "%.0f°", self.minTemp)
+        self.maxTempOutlet.text = String(format: "%.0f°", self.maxTemp)
+        self.windSpeedOutlet.text = String(format: "%.0fm/s", self.windSpeed)
+        self.humidityOutlet.text = String(format: "%.0f%%", self.humidity)
     }
     
     /*
